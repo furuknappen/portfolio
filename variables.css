@@ -1,22 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-:root{
---header-color: rgb(255, 255, 255);
---header-divider: var(var(--divider-color));
+:root {
+  --header-color: rgb(255, 255, 255);
+  --header-divider: var(var(--divider-color));
 
 
---container-border: 1px solid var(--border-color);
---sidebar-color: rgb(253, 247, 253);
---border-color: rgb(240, 240, 240);
---border-radius: 8px;
---border-radius-big: 11px;
+  --container-border: 1px solid var(--border-color);
+  --sidebar-color: var(--border-color);
+  --border-color: rgb(255, 255, 255);
+  --border-radius: 8px;
+  --border-radius-big: 11px;
 
---divider-color: rgb(231, 230, 230);
---link-color: rgb(92, 90, 204);
+  --divider-color: rgb(231, 230, 230);
+  --link-color:rgb(75, 142, 194);
 
---card-background-color: rgb(238, 240, 253);
---shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-/* --border:  1px solid var(--divider-color); */
+  --background-color-body: rgb(236, 246, 253);
+  --card-background-color: rgb(255, 255, 255);
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  /* --border:  1px solid var(--divider-color); */
 }
 
 
@@ -27,59 +28,77 @@
 
 
 
-body{
+body {
   font-family: "IBM Plex Sans";
-  padding:0;
-  margin:0;
- box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--background-color-body)
 }
 
-h1{
+h1 {
   font-family: "IBM Plex Sans";
   font-weight: normal;
   font-size: 2rem;
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
- h2{
-  font-family: "IBM Plex Sans";
-  font-weight: normal;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
- }
-
-h3{
+h2 {
   font-family: "IBM Plex Sans";
   font-weight: normal;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
-a{
+h3 {
+  font-family: "IBM Plex Sans";
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
   font-style: normal;
   color: var(--link-color);
-  text-underline-offset: 3px;
-  text-decoration-thickness: 2px;
+  /* text-underline-offset: 3px; */
+  /* text-decoration-thickness: 2px; */
+  position: relative;
+  text-decoration: none;
+  
+}
+ a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background-color: var(--link-color);
+  transition: width 0.3s ease;
 }
 
+ a:hover::after {width: 100%;}
+
 /* .............. iPads (tablets) - Landscape ............ */
-@media (min-width: 768px)  {
-h1{
-  font-family: "IBM Plex Sans";
-  font-weight: normal;
-  font-size: 3.25rem
-}
- h2{
-  font-family: "IBM Plex Sans";
-  font-weight: normal;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
- }
-h3{
-  font-family: "IBM Plex Sans";
-  font-weight: normal;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-  
+@media (min-width: 768px) {
+  h1 {
+    font-family: "IBM Plex Sans";
+    font-weight: normal;
+    font-size: 3.25rem
+  }
+
+  h2 {
+    font-family: "IBM Plex Sans";
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-family: "IBM Plex Sans";
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
 }
